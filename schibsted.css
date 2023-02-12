@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #FCF39B;
+}
+
+.rekekonfettilogo{
+    margin-top: -20px;
+    margin-left: -20px;
+    transform: rotate(-5deg);
+}
+
+.fiskemannen{
+    margin-left: 120px;
+    margin-bottom: 35px;
+}
+
+.card .view-front img{
+    width: 40px;
+}
+
+.card .view-back img{
+    max-width: 50px;
+}
+
+.banner-container{
+    height: 500px;
+    width: 500px;
+    padding: 15px;
+    background-image: url("img/Konfetti_gron.png");
+    background-size: 500px 500px;
+    background-color: #c54625;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+}
+
+.spill-container{
+    height: 300px;
+    width: 300px;
+    padding: 25px;
+    background-image: url("img/rekekonfetti_bakgrunn.png");
+    background-size: 300px 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px;
+    margin-top: -55px;
+    margin-bottom: 10px;
+    margin-left: 85px;
+}
+
+p{
+    text-align: center;
+    font-family: "futura-pt-regular", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    color:#FCF39B;
+    margin-top: -6px;
+}
+
+.card,
+.cards,
+.view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.cards .card{
+    /* For å få fire ganger fire bilder i høyden og bredden */
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.616);
+    position: absolute;
+    transform: transform .25s linear;
+    backface-visibility: hidden;
+    /* For at pilen ikke endrer seg ved å holde over med musa */
+    pointer-events: none;
+    /* For at bruker ikke skal kunne markere teksten */
+    user-select: none;
+}
+
+.card .view-back{
+    /* display: none;*/
+    transform: rotateY(-180deg);
+}
+
+.card.flip .view-back{
+    transform: rotateY(0);
+}
+
+.card.flip .view-front{
+    transform: rotate(180deg);
+}
+
+.card.move{
+    animation: move 0.2s ease-in-out;
+}
+
+@keyframes move{
+    0%,
+    100%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-15px);
+    }
+    50%{
+        transform: translateX(15px);
+    }
+    70%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(8px);
+    }
+}
+
+.text{
+    width: 300px;
+    text-align: right;
+    margin-left: 185px;
+    margin-top: -95px;
+}
+
+h2{
+    display: inline-block;
+    text-align: right;
+    font-size: 25px;
+    font-family: "futura-pt-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #FCF39B;
+    color: #CD350D;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 7px;
+    padding: 10px;
+    border-style: none none solid solid;
+    border-color: #CD350D;
+}
+
+h2.first-line{
+    font-size: 30px;
+}
+
+h2.second-line{
+    color: #979431;
+}
+
+.kjop{
+    display:inline-flex;
+    background-color: #979431;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "futura-pt-regular", sans-serif;
+    cursor: pointer;
+}
+
+.kjop:hover{
+    background-color: #67651F;
+}
